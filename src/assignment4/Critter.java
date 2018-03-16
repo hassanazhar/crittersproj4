@@ -15,6 +15,7 @@ package assignment4;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /* see the PDF for descriptions of the methods and fields in this class
  * you may add fields, methods or inner classes to Critter ONLY if you make your additions private
@@ -72,9 +73,7 @@ public abstract class Critter {
 	}
 	//Stage2
 	protected final void run(int direction) {
-
 	}
-
 	protected final void reproduce(Critter offspring, int direction) {
 	}
 
@@ -123,7 +122,7 @@ public abstract class Critter {
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
 		//H
-		Class<?> newCritter = null;
+
 		boolean real =false;
 		for(String i : Critter.realCritters){
 			if(i.equals(critter_class_name)){
@@ -136,11 +135,25 @@ public abstract class Critter {
 		}
 		//Critter is real. Init and put it in list.
 		try{
-			newCritter= Class.forName(critter_class_name);
-
-		}catch(Exception e){
-			System.out.println("ERRORRORORORORO");
+            Class<?> newCritter =Class.forName(critter_class_name);
+            Critter c = (Critter) newCritter.newInstance();
+            c.energy=Params.start_energy;
+            c.x_coord= getRandomInt(Params.world_width);
+            c.y_coord=getRandomInt(Params.world_height);
+            //add more stuff as necessary
+            population.add(c);
+		}catch(ClassNotFoundException e){
+		    System.out.println("ERROR 1");
+		    throw new InvalidCritterException(critter_class_name);
 		}
+		catch (IllegalAccessException e){
+		    System.out.println("ERROR 2");
+		    throw new InvalidCritterException(critter_class_name);
+        }
+        catch(InstantiationException e){
+		    System.out.println("ERROR 3");
+		    throw new InvalidCritterException(critter_class_name);
+        }
 		//if valid, put it in pop. Make new class for critter_class_name
 	}
 
