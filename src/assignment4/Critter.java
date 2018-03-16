@@ -26,31 +26,25 @@ public abstract class Critter {
 	private static String myPackage;
 	private	static List<Critter> population = new java.util.ArrayList<Critter>();
 	private static List<Critter> babies = new java.util.ArrayList<Critter>();
-
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
 	static {
 		myPackage = Critter.class.getPackage().toString().split(" ")[1];
 	}
-	
 	private static java.util.Random rand = new java.util.Random();
 	public static int getRandomInt(int max) {
 		return rand.nextInt(max);
 	}
-	
 	public static void setSeed(long new_seed) {
 		rand = new java.util.Random(new_seed);
 	}
-	
-	
 	/* a one-character long string that visually depicts your critter in the ASCII interface */
 	public String toString() { return ""; }
-	
 	private int energy = 0;
 	protected int getEnergy() { return energy; }
-	
 	private int x_coord;
 	private int y_coord;
-	
+
+	//Stage1
 	protected final void walk(int direction) {
 		//Remember: world starts at 0,0, which is top left
 		switch(direction){
@@ -76,11 +70,11 @@ public abstract class Critter {
 				y_coord=torusy(1);
 		}
 	}
-	
+	//Stage2
 	protected final void run(int direction) {
-		
+
 	}
-	
+
 	protected final void reproduce(Critter offspring, int direction) {
 	}
 
@@ -88,7 +82,7 @@ public abstract class Critter {
 	public abstract boolean fight(String oponent);
 	//MY NEW PRIVATE METHODS/ CONSTANTS
 	//TORUS WORLD
-	//H
+	//H STAGE 1
 	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","Assignment4.MyCritter1","Assignment4.MyCritter6","Assignment4.MyCritter7"};
 	private final int torusx(int moves){
 		if ((x_coord+moves)>(Params.world_width-1)){
@@ -116,7 +110,7 @@ public abstract class Critter {
 			return(y_coord);
 		}
 	}
-	
+
 	/**
 	 * create and initialize a Critter subclass.
 	 * critter_class_name must be the unqualified name of a concrete subclass of Critter, if not,
@@ -129,18 +123,27 @@ public abstract class Critter {
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
 		//H
-		boolean real=false;
-		for(String i: realCritters){
-			if (i.equals(critter_class_name)){
-				real=true;
+		Class<?> newCritter = null;
+		boolean real =false;
+		for(String i : Critter.realCritters){
+			if(i.equals(critter_class_name)){
+				real = true;
+				break;
 			}
 		}
-		if(real==false){
+		if(real == false){
 			throw new InvalidCritterException(critter_class_name);
+		}
+		//Critter is real. Init and put it in list.
+		try{
+			newCritter= Class.forName(critter_class_name);
+
+		}catch(Exception e){
+			System.out.println("ERRORRORORORORO");
 		}
 		//if valid, put it in pop. Make new class for critter_class_name
 	}
-	
+
 	/**
 	 * Gets a list of critters of a specific type.
 	 * @param critter_class_name What kind of Critter is to be listed.  Unqualified class name.
@@ -149,10 +152,10 @@ public abstract class Critter {
 	 */
 	public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
 		List<Critter> result = new java.util.ArrayList<Critter>();
-	
+
 		return result;
 	}
-	
+
 	/**
 	 * Prints out how many Critters of each type there are on the board.
 	 * @param critters List of Critters.
@@ -174,13 +177,13 @@ public abstract class Critter {
 			System.out.print(prefix + s + ":" + critter_count.get(s));
 			prefix = ", ";
 		}
-		System.out.println();		
+		System.out.println();
 	}
-	
-	/* the TestCritter class allows some critters to "cheat". If you want to 
+
+	/* the TestCritter class allows some critters to "cheat". If you want to
 	 * create tests of your Critter model, you can create subclasses of this class
-	 * and then use the setter functions contained here. 
-	 * 
+	 * and then use the setter functions contained here.
+	 *
 	 * NOTE: you must make sure that the setter functions work with your implementation
 	 * of Critter. That means, if you're recording the positions of your critters
 	 * using some sort of external grid or some other data structure in addition
@@ -191,23 +194,23 @@ public abstract class Critter {
 		protected void setEnergy(int new_energy_value) {
 			super.energy = new_energy_value;
 		}
-		
+
 		protected void setX_coord(int new_x_coord) {
 			super.x_coord = new_x_coord;
 		}
-		
+
 		protected void setY_coord(int new_y_coord) {
 			super.y_coord = new_y_coord;
 		}
-		
+
 		protected int getX_coord() {
 			return super.x_coord;
 		}
-		
+
 		protected int getY_coord() {
 			return super.y_coord;
 		}
-		
+
 
 		/*
 		 * This method getPopulation has to be modified by you if you are not using the population
@@ -217,11 +220,11 @@ public abstract class Critter {
 		protected static List<Critter> getPopulation() {
 			return population;
 		}
-		
+
 		/*
 		 * This method getBabies has to be modified by you if you are not using the babies
 		 * ArrayList that has been provided in the starter code.  In any case, it has to be
-		 * implemented for grading tests to work.  Babies should be added to the general population 
+		 * implemented for grading tests to work.  Babies should be added to the general population
 		 * at either the beginning OR the end of every timestep.
 		 */
 		protected static List<Critter> getBabies() {
@@ -236,11 +239,11 @@ public abstract class Critter {
 		// Complete this method.
 
 	}
-	
+
 	public static void worldTimeStep() {
 		// Complete this method.
 	}
-	
+
 	public static void displayWorld() {
 		// Complete this method.
 	}
