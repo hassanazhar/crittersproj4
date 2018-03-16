@@ -70,6 +70,7 @@ public abstract class Critter {
 				x_coord=torusx(1);
 				y_coord=torusy(1);
 		}
+		energy=energy-Params.walk_energy_cost;
 	}
 	//Stage2
 	protected final void run(int direction) {
@@ -109,6 +110,7 @@ public abstract class Critter {
 			return(y_coord);
 		}
 	}
+	private boolean isAlive;
 
 	/**
 	 * create and initialize a Critter subclass.
@@ -120,9 +122,8 @@ public abstract class Critter {
 	 * @param critter_class_name
 	 * @throws InvalidCritterException
 	 */
+	//DONE STAGE 1
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
-		//H
-
 		boolean real =false;
 		for(String i : Critter.realCritters){
 			if(i.equals(critter_class_name)){
@@ -140,6 +141,7 @@ public abstract class Critter {
             c.energy=Params.start_energy;
             c.x_coord= getRandomInt(Params.world_width);
             c.y_coord=getRandomInt(Params.world_height);
+            c.isAlive= true;
             //add more stuff as necessary
             population.add(c);
 		}catch(ClassNotFoundException e){
@@ -156,7 +158,6 @@ public abstract class Critter {
         }
 		//if valid, put it in pop. Make new class for critter_class_name
 	}
-
 	/**
 	 * Gets a list of critters of a specific type.
 	 * @param critter_class_name What kind of Critter is to be listed.  Unqualified class name.
@@ -254,6 +255,20 @@ public abstract class Critter {
 	}
 
 	public static void worldTimeStep() {
+	    for (Critter i : Critter.population){
+	        if(i.energy<=0){
+	            i.isAlive=false;
+	            Critter.population.remove(i);
+            }
+            else if(i.energy>0){
+	            i.isAlive=true;
+                i.doTimeStep();
+            }
+        }
+
+        //Add code for encounter resolution b/w critters in same loc
+        //Add code for Reproduce. Add new critters to Population
+        //Add code to remove dead critters
 		// Complete this method.
 	}
 
