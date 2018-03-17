@@ -45,9 +45,10 @@ public abstract class Critter {
 	private int x_coord;
 	private int y_coord;
 
-	//Stage1
+	//Stage1 DONE
 	protected final void walk(int direction) {
 		//Remember: world starts at 0,0, which is top left
+		energy=energy-Params.walk_energy_cost;
 		switch(direction){
 			case (0)://E
 				x_coord=torusx(1);
@@ -70,10 +71,36 @@ public abstract class Critter {
 				x_coord=torusx(1);
 				y_coord=torusy(1);
 		}
-		energy=energy-Params.walk_energy_cost;
+
 	}
-	//Stage2
+	//Stage2 DONE
 	protected final void run(int direction) {
+		energy = energy-Params.run_energy_cost;
+		switch(direction){
+			case(0):
+				x_coord=torusx(2);
+
+			case(1):
+				x_coord=torusx(2);
+				y_coord=torusy(-2);
+			case(2):
+				y_coord=torusy(-2);
+			case(3):
+				x_coord=torusx(-2);
+				y_coord=torusy(-2);
+			case(4):
+				x_coord=torusx(-2);
+			case(5):
+				x_coord=torusx(-2);
+				y_coord=torusy(2);
+			case(6):
+				y_coord=torusy(2);
+			case(7):
+				x_coord=torusx(2);
+				y_coord=torusy(2);
+
+
+		}
 	}
 	protected final void reproduce(Critter offspring, int direction) {
 	}
@@ -164,8 +191,21 @@ public abstract class Critter {
 	 * @return List of Critters.
 	 * @throws InvalidCritterException
 	 */
+	//DONE
 	public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
 		List<Critter> result = new java.util.ArrayList<Critter>();
+		Class<?> crit = null;
+		try{
+			crit=Class.forName(critter_class_name);
+		}
+		catch (ClassNotFoundException e){
+			throw new InvalidCritterException(critter_class_name);
+		}
+		for(Critter i: population){
+			if(crit.isInstance(i)){
+				result.add(i);
+			}
+		}
 
 		return result;
 	}
@@ -249,11 +289,23 @@ public abstract class Critter {
 	/**
 	 * Clear the world of all critters, dead and alive
 	 */
+	//DONE
 	public static void clearWorld() {
 		// Complete this method.
+		for(Critter i: population){
+			population.remove(i);
+		}
+		for(Critter j: babies){
+			babies.remove(j);
+		}
+
 
 	}
 
+	//Add code for encounter resolution b/w critters in same loc
+	//Add code for Reproduce. Add new critters to Population
+	//Add code to remove dead critters
+	// Complete this method.
 	public static void worldTimeStep() {
 	    for (Critter i : Critter.population){
 	        if(i.energy<=0){
@@ -266,10 +318,7 @@ public abstract class Critter {
             }
         }
 
-        //Add code for encounter resolution b/w critters in same loc
-        //Add code for Reproduce. Add new critters to Population
-        //Add code to remove dead critters
-		// Complete this method.
+
 	}
 
 	public static void displayWorld() {
