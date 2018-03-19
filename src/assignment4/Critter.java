@@ -13,6 +13,8 @@ package assignment4;
  */
 
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -45,64 +47,107 @@ public abstract class Critter {
 	private int x_coord;
 	private int y_coord;
 
-	//Stage1 DONE
+	//DONE UPDATED
 	protected final void walk(int direction) {
 		//Remember: world starts at 0,0, which is top left
 		energy=energy-Params.walk_energy_cost;
+		int x = x_coord;
+		int y= y_coord;
 		switch(direction){
 			case (0)://E
-				x_coord=torusx(1);
+				x_coord=torusx(1,x);
 			case(1)://NE
-				x_coord=torusx(1);
-				y_coord=torusy(-1);
+				x_coord=torusx(1,x);
+				y_coord=torusy(-1,y);
 			case(2)://N
-				y_coord=torusy(-1);
+				y_coord=torusy(-1,y);
 			case(3)://NW
-				x_coord=torusx(-1);
-				y_coord=torusy(-1);
+				x_coord=torusx(-1,x);
+				y_coord=torusy(-1,y);
 			case(4)://W
-				x_coord=torusx(-1);
+				x_coord=torusx(-1,x);
 			case(5)://SW
-				x_coord=torusx(-1);
-				y_coord=torusy(1);
+				x_coord=torusx(-1,x);
+				y_coord=torusy(1,y);
 			case(6)://S
-				y_coord=torusy(1);
+				y_coord=torusy(1,y);
 			case(7)://SE
-				x_coord=torusx(1);
-				y_coord=torusy(1);
+				x_coord=torusx(1,x);
+				y_coord=torusy(1,y);
 		}
 
 	}
-	//Stage2 DONE
+	//Stage2 DONE UPDATED
 	protected final void run(int direction) {
 		energy = energy-Params.run_energy_cost;
+		int x= x_coord;
+		int y = y_coord;
 		switch(direction){
 			case(0):
-				x_coord=torusx(2);
+				x_coord=torusx(2,x);
 
 			case(1):
-				x_coord=torusx(2);
-				y_coord=torusy(-2);
+				x_coord=torusx(2,x);
+				y_coord=torusy(-2,y);
 			case(2):
-				y_coord=torusy(-2);
+				y_coord=torusy(-2,y);
 			case(3):
-				x_coord=torusx(-2);
-				y_coord=torusy(-2);
+				x_coord=torusx(-2,x);
+				y_coord=torusy(-2,y);
 			case(4):
-				x_coord=torusx(-2);
+				x_coord=torusx(-2,x);
 			case(5):
-				x_coord=torusx(-2);
-				y_coord=torusy(2);
+				x_coord=torusx(-2,x);
+				y_coord=torusy(2,y);
 			case(6):
-				y_coord=torusy(2);
+				y_coord=torusy(2,y);
 			case(7):
-				x_coord=torusx(2);
-				y_coord=torusy(2);
+				x_coord=torusx(2,x);
+				y_coord=torusy(2,y);
 
 
 		}
 	}
+	//DONE UPDATED
 	protected final void reproduce(Critter offspring, int direction) {
+		if (this.energy<Params.min_reproduce_energy||!this.isAlive){
+			return;
+		}
+		else{
+			offspring.energy= this.energy/2;
+			double energyroundup=Math.ceil(this.energy/2);
+			this.energy=(int)energyroundup;
+			int x = this.x_coord;
+			int y = this.y_coord;
+			switch(direction){
+				case(0):
+					offspring.x_coord=torusx(1, x);
+					offspring.y_coord=y;
+				case(1)://NE
+					offspring.x_coord=torusx(1,x);
+					offspring.y_coord=torusy(-1,y);
+				case(2)://N
+					offspring.x_coord=x;
+					offspring.y_coord=torusy(-1,y);
+				case(3)://NW
+					offspring.x_coord=torusx(-1,x);
+					offspring.y_coord=torusy(-1,y);
+				case(4)://W
+					offspring.x_coord=torusx(-1,x);
+					offspring.y_coord=y;
+				case(5)://SW
+					offspring.x_coord=torusx(-1,x);
+					offspring.y_coord=torusy(1,y);
+				case(6)://S
+					offspring.x_coord=x;
+					offspring.y_coord=torusy(1,y);
+				case(7)://SE
+					offspring.x_coord=torusx(1,x);
+					offspring.y_coord=torusy(1,y);
+
+			}
+			babies.add(offspring);
+		}
 	}
 
 	public abstract void doTimeStep();
@@ -111,30 +156,32 @@ public abstract class Critter {
 	//TORUS WORLD
 	//H STAGE 1
 	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","Assignment4.MyCritter1","Assignment4.MyCritter6","Assignment4.MyCritter7"};
-	private final int torusx(int moves){
-		if ((x_coord+moves)>(Params.world_width-1)){
+	private final int torusx(int moves, int xcoord){
+		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
 		}
-		else if((x_coord+moves)<0){
+		else if((xcoord+moves)<0){
 			return(Params.world_width-moves);
 		}
 		else{
-			x_coord+=moves;
-			return(x_coord);
+			xcoord+=moves;
+			x_coord+=moves;//need to update the variable as well
+			return(xcoord);
 		}
 	}
-	private final int torusy(int moves){
-		if((y_coord+moves)<0){
+	private final int torusy(int moves, int ycoord){
+		if((ycoord+moves)<0){
 			return(Params.world_height-moves);
 		}
-		else if((Params.world_height-1)<(y_coord+moves)){
+		else if((Params.world_height-1)<(ycoord+moves)){
 			return(moves-1);
 
 		}
 		else{
-			y_coord=y_coord+moves;
-			return(y_coord);
+			ycoord+=moves;
+			y_coord=y_coord+moves; //need to update y_coord as well
+			return(ycoord);
 		}
 	}
 	private boolean isAlive;
@@ -149,40 +196,46 @@ public abstract class Critter {
 	 * @param critter_class_name
 	 * @throws InvalidCritterException
 	 */
-	//DONE STAGE 1
+	//DONE UPDATED
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
-		boolean real =false;
-		for(String i : Critter.realCritters){
-			if(i.equals(critter_class_name)){
-				real = true;
-				break;
-			}
-		}
-		if(real == false){
+		//Need to make sure critter is real
+		Class<?> myCritClass = null;
+		Object obj;
+		Constructor<?> consttr;
+		try{
+            myCritClass =Class.forName(critter_class_name);
+            consttr=myCritClass.getConstructor();
+            obj= consttr.newInstance();
+			Critter c = (Critter) obj; //IS THIS OK?
+			c.energy=Params.start_energy;
+			c.x_coord= getRandomInt(Params.world_width);
+			c.y_coord=getRandomInt(Params.world_height);
+			c.isAlive= true;
+			//add more stuff as necessary
+			population.add(c);
+
+		}catch(ClassNotFoundException e) {
+			System.out.println("ERROR 1");
 			throw new InvalidCritterException(critter_class_name);
 		}
-		//Critter is real. Init and put it in list.
-		try{
-            Class<?> newCritter =Class.forName(critter_class_name);
-            Critter c = (Critter) newCritter.newInstance();
-            c.energy=Params.start_energy;
-            c.x_coord= getRandomInt(Params.world_width);
-            c.y_coord=getRandomInt(Params.world_height);
-            c.isAlive= true;
-            //add more stuff as necessary
-            population.add(c);
-		}catch(ClassNotFoundException e){
-		    System.out.println("ERROR 1");
-		    throw new InvalidCritterException(critter_class_name);
+		catch(NoSuchMethodException e){
+			System.out.println("ERROR 2");
+			throw new InvalidCritterException(critter_class_name);
 		}
 		catch (IllegalAccessException e){
-		    System.out.println("ERROR 2");
-		    throw new InvalidCritterException(critter_class_name);
-        }
-        catch(InstantiationException e){
 		    System.out.println("ERROR 3");
 		    throw new InvalidCritterException(critter_class_name);
         }
+        catch(InvocationTargetException e){
+			System.out.println("ERROR 4");
+			throw new InvalidCritterException(critter_class_name);
+
+		}
+        catch(InstantiationException e){
+		    System.out.println("ERROR 5");
+		    throw new InvalidCritterException(critter_class_name);
+        }
+
 		//if valid, put it in pop. Make new class for critter_class_name
 	}
 	/**
