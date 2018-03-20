@@ -397,29 +397,40 @@ public abstract class Critter {
 				}
 	    		else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
 	    			if(aCrit.isAlive&&bCrit.isAlive) {
-	    				//Both want to fight
-						//Maybe need to check if in same position?
-						boolean Afight = aCrit.fight(bCrit.toString());
-						boolean Bfight = bCrit.fight(aCrit.toString());
+						boolean aFight = aCrit.fight(bCrit.toString());
+						boolean bFight = bCrit.fight(aCrit.toString());
 
-						if(Afight && Bfight){
+						if(aFight && bFight){
 							rollDice(aCrit,bCrit);
 						}
-						else if(Afight && !Bfight){
+						else if(aFight && !bFight){
 							//we want B to try and walk
-							aCrit.isAlive=true;
-							aCrit.energy += bCrit.getEnergy()/2;
-							removeCritter(bCrit);
+							if(!runAway(bCrit)){
+								aCrit.isAlive=true;
+								aCrit.energy += bCrit.getEnergy()/2;
+								removeCritter(bCrit);
+							}
+
 						}
-						else if(!Afight && Bfight){
-							bCrit.isAlive=true;
-							bCrit.energy += aCrit.getEnergy()/2;
-							removeCritter(aCrit);
+						else if(!aFight && bFight){
+							if(!runAway(aCrit)) {
+								bCrit.isAlive = true;
+								bCrit.energy += aCrit.getEnergy() / 2;
+								removeCritter(aCrit);
+							}
 						}
-						else if(!Afight && !Bfight){
+						else if(!aFight && !bFight){
 							runAway(aCrit);
+							if(aCrit.getEnergy()<=0){
+								removeCritter(aCrit);
+							}
 							runAway(bCrit);
-							
+							if(bCrit.getEnergy()<=0){
+								removeCritter(bCrit);
+							}
+							if(sameLocation(aCrit,bCrit)){
+								rollDice(aCrit, bCrit);
+							}
 						}
 
 					}
@@ -517,23 +528,32 @@ public abstract class Critter {
 		}
 	}
 
-	private static void runAway(Critter foo){
+	private static boolean runAway(Critter foo){
 		//if A has moved
 		if(foo.moved) {
 			foo.energy = foo.getEnergy() - Params.walk_energy_cost;
 			if (foo.getEnergy() <= 0) {
 				removeCritter(foo);
 			}
+			return false;
 		} else {
 			int dir = getRandomInt(8);
 			if(canMove(foo, dir)) {
 				foo.walk(dir);
+				return true;
 			}else{
 				foo.energy = foo.getEnergy() - Params.walk_energy_cost;
+				return false;
 			}
 		}
 	}
 
+	private static boolean sameLocation(Critter A, Critter B){
+		if((A.x_coord==B.x_coord) && (A.y_coord == B.y_coord)){
+			return true;
+		}
+		return false;
+	}
 	public static void displayWorld() {
 		// Complete this method.
 	}
