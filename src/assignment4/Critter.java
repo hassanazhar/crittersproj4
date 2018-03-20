@@ -29,6 +29,7 @@ public abstract class Critter {
 	private static String myPackage;
 	private	static List<Critter> population = new java.util.ArrayList<Critter>();
 	private static List<Critter> babies = new java.util.ArrayList<Critter>();
+	private static int[][] map = new int[Params.world_width][Params.world_height];
 	// Gets the package name.  This assumes that Critter and its subclasses are all in the same package.
 	static {
 		myPackage = Critter.class.getPackage().toString().split(" ")[1];
@@ -52,7 +53,8 @@ public abstract class Critter {
 		//Remember: world starts at 0,0, which is top left
 		energy=energy-Params.walk_energy_cost;
 		int x = x_coord;
-		int y= y_coord;
+		int y = y_coord;
+		map[x][y] += -1;		// removing critter from previous spot in map
 		switch(direction){
 			case (0)://E
 				x_coord=torusx(1,x);
@@ -75,6 +77,7 @@ public abstract class Critter {
 				x_coord=torusx(1,x);
 				y_coord=torusy(1,y);
 		}
+		map[x_coord][y_coord] += 1; // adding critter to new spot in map
 		this.moved=true;
 
 	}
@@ -83,6 +86,7 @@ public abstract class Critter {
 		energy = energy-Params.run_energy_cost;
 		int x= x_coord;
 		int y = y_coord;
+		map[x][y] += -1;		// removing critter from previous spot in map
 		switch(direction){
 			case(0):
 				x_coord=torusx(2,x);
@@ -108,6 +112,7 @@ public abstract class Critter {
 
 
 		}
+		map[x_coord][y_coord] += 1;		// adding critter to new spot in map
 		this.moved=true;
 	}
 	//DONE UPDATED
@@ -219,6 +224,7 @@ public abstract class Critter {
 			c.energy=Params.start_energy;
 			c.x_coord= getRandomInt(Params.world_width);
 			c.y_coord=getRandomInt(Params.world_height);
+			map[c.x_coord][c.y_coord] += 1;
 			c.isAlive= true;
 			//add more stuff as necessary
 			population.add(c);
