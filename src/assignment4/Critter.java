@@ -75,6 +75,7 @@ public abstract class Critter {
 				x_coord=torusx(1,x);
 				y_coord=torusy(1,y);
 		}
+		this.moved=true;
 
 	}
 	//Stage2 DONE UPDATED
@@ -107,6 +108,7 @@ public abstract class Critter {
 
 
 		}
+		this.moved=true;
 	}
 	//DONE UPDATED
 	protected final void reproduce(Critter offspring, int direction) {
@@ -185,6 +187,13 @@ public abstract class Critter {
 		}
 	}
 	private boolean isAlive;
+	private boolean moved;//flag
+	private final int getx_coord(Critter i){
+		return i.x_coord;
+	}
+	private final int gety_coord(Critter i){
+		return i.y_coord;
+	}
 
 	/**
 	 * create and initialize a Critter subclass.
@@ -361,6 +370,7 @@ public abstract class Critter {
 	// Complete this method.
 	public static void worldTimeStep() {
 	    for (Critter i : Critter.population){
+	    	//i.doTimeStep();
 	        if(i.energy<=0){
 	            i.isAlive=false;
 	            Critter.population.remove(i);
@@ -368,8 +378,64 @@ public abstract class Critter {
             else if(i.energy>0){
 	            i.isAlive=true;
                 i.doTimeStep();
+                if(i.energy<0){
+                	i.isAlive=false;
+                	Critter.population.remove(i);
+
+				}
             }
+
         }
+
+        for(Critter j: Critter.population){
+	    	for(Critter i: Critter.population){
+	    		if(i==j){
+	    			continue;
+				}
+	    		else if(i.x_coord==j.x_coord&& i.y_coord==j.y_coord){
+	    			if(i.isAlive&&j.isAlive) {
+	    				//Both want to fight
+						//Maybe need to check if in same position?
+						if(i.fight(j.toString()) && j.fight(i.toString())){
+							int rolli = getRandomInt(i.getEnergy());
+							int rollj = getRandomInt(j.getEnergy());
+							if(rolli>=rollj){
+								i.isAlive=true; j.isAlive=false;
+								i.energy+= j.getEnergy()/2;
+								Critter.population.remove(j);
+							}
+							else{
+								j.isAlive=true;i.isAlive=false;
+								j.energy+= i.getEnergy()/2;
+								Critter.population.remove(i);
+							}
+
+						}
+						//how to determine if they wanna run/walk away?
+						//take care of walk/run in critter subclass fight methods if
+						//they don't wanna fight.
+						//make sure that each critter checks the adjacent location and no critter is there
+
+						else if(!i.fight(j.toString())&&!j.fight(i.toString())){
+							//taken care of within each critter's fight class
+						}
+						else if (!i.fight(j.toString())&&j.fight(i.toString())){
+							//i doesn't wanna fight, so roll dice is 0 for it. j wanna fight, so roll die is random
+
+						}
+						else if(i.fight(j.toString())&&!j.fight(i.toString())){
+							//i wanna fight so roll dice is rancom, j don't wanna fight so roll dice is zero
+
+						}
+					}
+			}
+			//reduce rest energy cost for all critters.
+				//generate algae// remove dead shit from population//add babies to population
+		}
+
+		}
+        //FIGHT&
+
 
 
 	}
