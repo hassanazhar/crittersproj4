@@ -375,64 +375,53 @@ public abstract class Critter {
 	//Add code to remove dead critters
 	// Complete this method.
 	public static void worldTimeStep() {
-	    for (Critter i : Critter.population){
-	    	//i.doTimeStep();
-	        if(i.energy<=0){
-	            i.isAlive=false;
-	            Critter.population.remove(i);
+	    for (Critter A : Critter.population){
+	    	//A.doTimeStep();
+	        if(A.energy<=0){
+				removeCritter(A);
             }
-            else if(i.energy>0){
-	            i.isAlive=true;
-                i.doTimeStep();
-                if(i.energy<0){
-                	i.isAlive=false;
-                	Critter.population.remove(i);
-
+            else if(A.energy>0){
+	            A.isAlive=true;
+                A.doTimeStep();
+                if(A.energy<0){
+					removeCritter(A);
 				}
             }
 
         }
 
-        for(Critter j: Critter.population){
-	    	for(Critter i: Critter.population){
-	    		if(i==j){
+        for(Critter bCrit: Critter.population){
+	    	for(Critter aCrit: Critter.population){
+	    		if(aCrit==bCrit){
 	    			continue;
 				}
-	    		else if(i.x_coord==j.x_coord&& i.y_coord==j.y_coord){
-	    			if(i.isAlive&&j.isAlive) {
+	    		else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
+	    			if(aCrit.isAlive&&bCrit.isAlive) {
 	    				//Both want to fight
 						//Maybe need to check if in same position?
-						if(i.fight(j.toString()) && j.fight(i.toString())){
-							int rolli = getRandomInt(i.getEnergy());
-							int rollj = getRandomInt(j.getEnergy());
-							if(rolli>=rollj){
-								i.isAlive=true; j.isAlive=false;
-								i.energy+= j.getEnergy()/2;
-								Critter.population.remove(j);
-							}
-							else{
-								j.isAlive=true;i.isAlive=false;
-								j.energy+= i.getEnergy()/2;
-								Critter.population.remove(i);
-							}
+						boolean Afight = aCrit.fight(bCrit.toString());
+						boolean Bfight = bCrit.fight(aCrit.toString());
 
+						if(Afight && Bfight){
+							rollDice(aCrit,bCrit);
 						}
-						//how to determine if they wanna run/walk away?
-						//take care of walk/run in critter subclass fight methods if
-						//they don't wanna fight.
-						//make sure that each critter checks the adjacent location and no critter is there
+						else if(Afight && !Bfight){
+							//we want B to try and walk
+							aCrit.isAlive=true;
+							aCrit.energy += bCrit.getEnergy()/2;
+							removeCritter(bCrit);
+						}
+						else if(!Afight && Bfight){
+							bCrit.isAlive=true;
+							bCrit.energy += aCrit.getEnergy()/2;
+							removeCritter(aCrit);
+						}
+						else if(!Afight && !Bfight){
+							runAway(aCrit);
+							runAway(bCrit);
+							
+						}
 
-						else if(!i.fight(j.toString())&&!j.fight(i.toString())){
-							//taken care of within each critter's fight class
-						}
-						else if (!i.fight(j.toString())&&j.fight(i.toString())){
-							//i doesn't wanna fight, so roll dice is 0 for it. j wanna fight, so roll die is random
-
-						}
-						else if(i.fight(j.toString())&&!j.fight(i.toString())){
-							//i wanna fight so roll dice is rancom, j don't wanna fight so roll dice is zero
-
-						}
 					}
 			}
 			//reduce rest energy cost for all critters.
@@ -444,6 +433,105 @@ public abstract class Critter {
 
 
 
+	}
+
+	private static void rollDice(Critter A, Critter B){
+		int rollA = getRandomInt(A.getEnergy());
+		int rollB = getRandomInt(B.getEnergy());
+		if(rollA>=rollB){
+			A.isAlive=true;
+			A.energy+= B.getEnergy()/2;
+			removeCritter(B);
+		}
+		else{
+			B.isAlive=true;
+			B.energy+= A.getEnergy()/2;
+			removeCritter(A);
+		}
+	}
+
+	private static void removeCritter(Critter foo){
+		foo.isAlive = false;
+		Critter.population.remove(foo);
+	}
+
+	private static boolean canMove(Critter foo, int direction) {
+		int x = foo.x_coord;
+		int y = foo.y_coord;
+		int xCheck = 0;
+		int yCheck = 0;
+		switch (direction) {
+			case (0)://E
+				xCheck = torus2x(1, x);
+			case (1)://NE
+				xCheck = torus2x(1, x);
+				yCheck = torus2y(-1, y);
+			case (2)://N
+				yCheck = torus2y(-1, y);
+			case (3)://NW
+				xCheck = torus2x(-1, x);
+				yCheck = torus2y(-1, y);
+			case (4)://W
+				xCheck = torus2x(-1, x);
+			case (5)://SW
+				xCheck = torus2x(-1, x);
+				yCheck = torus2y(1, y);
+			case (6)://S
+				yCheck = torus2y(1, y);
+			case (7)://SE
+				xCheck = torus2x(1, x);
+				yCheck = torus2y(1, y);
+		}
+		if(map[xCheck][yCheck]>0){
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	private static int torus2x(int moves, int xcoord){
+		if ((xcoord+moves)>(Params.world_width-1)){
+			return(moves-1);
+
+		}
+		else if((xcoord+moves)<0){
+			return(Params.world_width-moves);
+		}
+		else{
+			xcoord+=moves;
+			return(xcoord);
+		}
+	}
+
+	private static int torus2y(int moves, int ycoord){
+		if((ycoord+moves)<0){
+			return(Params.world_height-moves);
+		}
+		else if((Params.world_height-1)<(ycoord+moves)){
+			return(moves-1);
+
+		}
+		else{
+			ycoord+=moves;
+			return(ycoord);
+		}
+	}
+
+	private static void runAway(Critter foo){
+		//if A has moved
+		if(foo.moved) {
+			foo.energy = foo.getEnergy() - Params.walk_energy_cost;
+			if (foo.getEnergy() <= 0) {
+				removeCritter(foo);
+			}
+		} else {
+			int dir = getRandomInt(8);
+			if(canMove(foo, dir)) {
+				foo.walk(dir);
+			}else{
+				foo.energy = foo.getEnergy() - Params.walk_energy_cost;
+			}
+		}
 	}
 
 	public static void displayWorld() {
