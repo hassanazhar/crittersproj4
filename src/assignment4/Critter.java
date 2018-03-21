@@ -13,6 +13,7 @@ package assignment4;
  */
 
 
+import javax.annotation.processing.SupportedSourceVersion;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
@@ -390,8 +391,29 @@ public abstract class Critter {
         }
 
         encounters();
+		mapCheck();
 		// we have add reproduction
+
 		// we have to add algae
+
+		for (int i = 0; i < Params.refresh_algae_count; i = i + 1){
+			Algae child = new Algae;
+			child.setEnergy(Params.start_energy);
+			int x = getRandomInt(Params.world_width);
+			int y = getRandomInt(Params.world_height);
+			child.setX_coord(x);
+			child.setY_coord(y);
+			Critter.population.add(child);
+		}
+
+
+		for (Critter A : Critter.population){
+			A.energy = A.getEnergy() - Params.rest_energy_cost;
+			if(A.getEnergy()<=0){
+				removeCritter(A);
+			}
+		}
+
 		population.addAll(babies);
 		babies.clear();
 	}
@@ -399,6 +421,7 @@ public abstract class Critter {
 	private static void rollDice(Critter A, Critter B){
 		int rollA = getRandomInt(A.getEnergy());
 		int rollB = getRandomInt(B.getEnergy());
+
 		if(rollA>=rollB){
 			A.isAlive=true;
 			A.energy+= B.getEnergy()/2;
@@ -558,6 +581,23 @@ public abstract class Critter {
 		}
 	}
 
+	private static void mapCheck(){
+		for(int x = 0; x < Params.world_width; x = x + 1){
+			for(int y = 0; y < Params.world_height; y = y + 1){
+				if(map[x][y] > 1){
+					System.out.println("Encounter Missing. Position: (" + x + "," + y + ").");
+				}
+			}
+		}
+	}
+
+	private static boolean checkAlgae(Critter foo){
+		try {
+			List<Critter> tmp = getInstances("assignment4.Algae");
+		}
+		catch(assignment4.InvalidCritterException e){
+		}
+	}
 	public static void displayWorld() {
 		// Complete this method.
 	}
