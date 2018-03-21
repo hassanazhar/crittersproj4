@@ -376,7 +376,6 @@ public abstract class Critter {
 	// Complete this method.
 	public static void worldTimeStep() {
 	    for (Critter A : Critter.population){
-	    	//A.doTimeStep();
 	        if(A.energy<=0){
 				removeCritter(A);
             }
@@ -390,60 +389,11 @@ public abstract class Critter {
 
         }
 
-        for(Critter bCrit: Critter.population){
-	    	for(Critter aCrit: Critter.population){
-	    		if(aCrit==bCrit){
-	    			continue;
-				}
-	    		else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
-	    			if(aCrit.isAlive&&bCrit.isAlive) {
-						boolean aFight = aCrit.fight(bCrit.toString());
-						boolean bFight = bCrit.fight(aCrit.toString());
-
-						if(aFight && bFight){
-							rollDice(aCrit,bCrit);
-						}
-						else if(aFight && !bFight){
-							//we want B to try and walk
-							if(!runAway(bCrit)){
-								aCrit.isAlive=true;
-								aCrit.energy += bCrit.getEnergy()/2;
-								removeCritter(bCrit);
-							}
-
-						}
-						else if(!aFight && bFight){
-							if(!runAway(aCrit)) {
-								bCrit.isAlive = true;
-								bCrit.energy += aCrit.getEnergy() / 2;
-								removeCritter(aCrit);
-							}
-						}
-						else if(!aFight && !bFight){
-							runAway(aCrit);
-							if(aCrit.getEnergy()<=0){
-								removeCritter(aCrit);
-							}
-							runAway(bCrit);
-							if(bCrit.getEnergy()<=0){
-								removeCritter(bCrit);
-							}
-							if(sameLocation(aCrit,bCrit)){
-								rollDice(aCrit, bCrit);
-							}
-						}
-
-					}
-			}
-			//reduce rest energy cost for all critters.
-				//generate algae// remove dead shit from population//add babies to population
-		}
-
-		}
-        //FIGHT&
-
-
-
+        encounters();
+		// we have add reproduction
+		// we have to add algae
+		population.addAll(babies);
+		babies.clear();
 	}
 
 	private static void rollDice(Critter A, Critter B){
@@ -554,6 +504,60 @@ public abstract class Critter {
 		}
 		return false;
 	}
+
+	private static void encounters(){
+		for(Critter bCrit: Critter.population){
+	    	for(Critter aCrit: Critter.population){
+	    		if(aCrit==bCrit){
+	    			continue;
+				}
+	    		else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
+	    			if(aCrit.isAlive&&bCrit.isAlive) {
+						boolean aFight = aCrit.fight(bCrit.toString());
+						boolean bFight = bCrit.fight(aCrit.toString());
+
+						if(aFight && bFight){
+							rollDice(aCrit,bCrit);
+						}
+						else if(aFight && !bFight){
+							//we want B to try and walk
+							if(!runAway(bCrit)){
+								aCrit.isAlive=true;
+								aCrit.energy += bCrit.getEnergy()/2;
+								removeCritter(bCrit);
+							}
+
+						}
+						else if(!aFight && bFight){
+							if(!runAway(aCrit)) {
+								bCrit.isAlive = true;
+								bCrit.energy += aCrit.getEnergy() / 2;
+								removeCritter(aCrit);
+							}
+						}
+						else if(!aFight && !bFight){
+							runAway(aCrit);
+							if(aCrit.getEnergy()<=0){
+								removeCritter(aCrit);
+							}
+							runAway(bCrit);
+							if(bCrit.getEnergy()<=0){
+								removeCritter(bCrit);
+							}
+							if(sameLocation(aCrit,bCrit)){
+								rollDice(aCrit, bCrit);
+							}
+						}
+
+					}
+				}
+			//reduce rest energy cost for all critters.
+				//generate algae// remove dead shit from population//add babies to population
+			}
+
+		}
+	}
+
 	public static void displayWorld() {
 		// Complete this method.
 	}
