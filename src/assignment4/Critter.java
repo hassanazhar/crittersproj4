@@ -397,7 +397,7 @@ public abstract class Critter {
 		// we have to add algae
 
 		for (int i = 0; i < Params.refresh_algae_count; i = i + 1){
-			Algae child = new Algae;
+			Algae child = new Algae();
 			child.setEnergy(Params.start_energy);
 			int x = getRandomInt(Params.world_width);
 			int y = getRandomInt(Params.world_height);
@@ -592,14 +592,25 @@ public abstract class Critter {
 	}
 
 	private static boolean checkAlgae(Critter foo) throws InvalidCritterException {
+		List<Critter> tmp;
 		try {
-			List<Critter> tmp = getInstances("assignment4.Algae");
+			tmp = getInstances("assignment4.Algae");
+
 		}
 		catch(assignment4.InvalidCritterException e){
 			throw new InvalidCritterException("");
 		}
+		for(Critter i : tmp){
+			if(foo==i){
+				return true;
+			}
+		}
+		return false;
 	}
+
 	public static void displayWorld() {
-		// Complete this method.
+
+
+
 	}
 }

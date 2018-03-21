@@ -20,8 +20,8 @@
           <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="246" column="65" lean-forward="false" selection-start-line="246" selection-start-column="65" selection-end-line="246" selection-end-column="65" />
+                <state relative-caret-position="560">
+                  <caret line="610" column="4" lean-forward="false" selection-start-line="610" selection-start-column="4" selection-end-line="610" selection-end-column="4" />
                   <folding>
                     <element signature="method#walk#0;class#Critter#0" expanded="false" />
                     <element signature="method#run#0;class#Critter#0" expanded="false" />
@@ -41,6 +41,7 @@
                     <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
                     <element signature="method#encounters#0;class#Critter#0" expanded="false" />
                     <element signature="method#mapCheck#0;class#Critter#0" expanded="false" />
+                    <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -106,8 +107,8 @@
           <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="598" column="47" lean-forward="true" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="47" />
+                <state relative-caret-position="27">
+                  <caret line="399" column="38" lean-forward="false" selection-start-line="399" selection-start-column="38" selection-end-line="399" selection-end-column="38" />
                   <folding>
                     <element signature="method#walk#0;class#Critter#0" expanded="false" />
                     <element signature="method#run#0;class#Critter#0" expanded="false" />
@@ -351,7 +352,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521524406788</updated>
-      <workItem from="1521524409951" duration="15677000" />
+      <workItem from="1521524409951" duration="17997000" />
     </task>
     <task id="LOCAL-00001" summary="Added Map functionality">
       <created>1521570224580</created>
@@ -409,11 +410,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521645951071</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="WorldTimeStep fighting done, before critters reproduce">
+      <created>1521646090638</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1521646090638</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15677000" />
+    <option name="totallyTimeSpent" value="17997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -511,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="598" column="47" lean-forward="true" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="47" />
+        <state relative-caret-position="27">
+          <caret line="399" column="38" lean-forward="false" selection-start-line="399" selection-start-column="38" selection-end-line="399" selection-end-column="38" />
           <folding>
             <element signature="method#walk#0;class#Critter#0" expanded="false" />
             <element signature="method#run#0;class#Critter#0" expanded="false" />
