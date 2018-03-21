@@ -395,26 +395,31 @@ public abstract class Critter {
 		// we have add reproduction
 
 		// we have to add algae
-
 		for (int i = 0; i < Params.refresh_algae_count; i = i + 1){
-			Algae child = new Algae;
-			child.setEnergy(Params.start_energy);
-			int x = getRandomInt(Params.world_width);
-			int y = getRandomInt(Params.world_height);
-			child.setX_coord(x);
-			child.setY_coord(y);
-			Critter.population.add(child);
+			//Algae child = new Algae();
+			//child.setEnergy(Params.start_energy);
+			//makecritter takes care of anything
+			try{
+				makeCritter("assignment4.algae");
+			}
+			catch(InvalidCritterException e){
+				e.printStackTrace();
+			}
 		}
 
-
+		//deduct rest energy
 		for (Critter A : Critter.population){
 			A.energy = A.getEnergy() - Params.rest_energy_cost;
 			if(A.getEnergy()<=0){
 				removeCritter(A);
 			}
 		}
-
-		population.addAll(babies);
+		//babies add
+		for(Critter b: babies){
+			b.isAlive=true;
+			population.add(b);
+		}
+		//not sure if this removes everything
 		babies.clear();
 	}
 
@@ -580,7 +585,7 @@ public abstract class Critter {
 
 		}
 	}
-
+	//whats purpose of mapcheck
 	private static void mapCheck(){
 		for(int x = 0; x < Params.world_width; x = x + 1){
 			for(int y = 0; y < Params.world_height; y = y + 1){
@@ -590,14 +595,21 @@ public abstract class Critter {
 			}
 		}
 	}
-
+	//dont need this function
 	private static boolean checkAlgae(Critter foo) throws InvalidCritterException {
+		boolean x =false;
 		try {
 			List<Critter> tmp = getInstances("assignment4.Algae");
+			if(!tmp.isEmpty()){
+				x=true;
+				return true;
+			}
 		}
 		catch(assignment4.InvalidCritterException e){
+
 			throw new InvalidCritterException("");
 		}
+		return x;
 	}
 	public static void displayWorld() {
 		// Complete this method.

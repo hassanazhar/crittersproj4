@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c28dcc3-192c-4d57-93c9-f8ac3a53aa58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
+    <list default="true" id="fc1d3f8f-98fd-4d67-83e4-b77ac137dfc3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/crittersproj4.iml" afterPath="$PROJECT_DIR$/crittersproj4.iml" />
+      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,135 +18,37 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="246" column="65" lean-forward="false" selection-start-line="246" selection-start-column="65" selection-end-line="246" selection-end-column="65" />
-                  <folding>
-                    <element signature="method#walk#0;class#Critter#0" expanded="false" />
-                    <element signature="method#run#0;class#Critter#0" expanded="false" />
-                    <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torusx#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torusy#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
-                    <element signature="method#runStats#0;class#Critter#0" expanded="false" />
-                    <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
-                    <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-                    <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-                    <element signature="method#runAway#0;class#Critter#0" expanded="false" />
-                    <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
-                    <element signature="method#encounters#0;class#Critter#0" expanded="false" />
-                    <element signature="method#mapCheck#0;class#Critter#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InvalidCritterException.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/InvalidCritterException.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#166#167#0" expanded="true" />
-                    <element signature="e#209#210#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Algae.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Craig.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Params.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MyCritter1.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="598" column="47" lean-forward="true" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="47" />
-                  <folding>
-                    <element signature="method#walk#0;class#Critter#0" expanded="false" />
-                    <element signature="method#run#0;class#Critter#0" expanded="false" />
-                    <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torusx#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torusy#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
-                    <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
-                    <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
-                    <element signature="method#runStats#0;class#Critter#0" expanded="false" />
-                    <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
-                    <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-                    <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-                    <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-                    <element signature="method#runAway#0;class#Critter#0" expanded="false" />
-                    <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
-                    <element signature="method#encounters#0;class#Critter#0" expanded="false" />
-                    <element signature="method#mapCheck#0;class#Critter#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3603">
+              <caret line="119" column="30" lean-forward="false" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="30" />
+              <folding>
+                <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+                <element signature="method#rollDice#0;class#Critter#0" expanded="false" />
+                <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
+                <element signature="method#canMove#0;class#Critter#0" expanded="false" />
+                <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
+                <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
+                <element signature="method#runAway#0;class#Critter#0" expanded="false" />
+                <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
+                <element signature="method#encounters#0;class#Critter#0" expanded="false" />
+                <element signature="method#mapCheck#0;class#Critter#0" expanded="false" />
+                <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fight</find>
-      <find>addAll</find>
-      <find>getIns</find>
-      <find>invalidC</find>
+      <find>algae</find>
+      <find>algae()</find>
+      <find>Algae</find>
+      <find>repro</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,37 +72,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>ArquillianJava</id>
-          </State>
-          <State>
-            <id>GeneralJava</id>
-          </State>
-          <State>
-            <id>Internationalization issuesJava</id>
-          </State>
-          <State>
-            <id>JUnit issuesJava</id>
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Kotlin</id>
-          </State>
-          <State>
-            <id>TestNGJava</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="633" />
+    <option name="width" value="654" />
+    <option name="height" value="687" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -213,10 +92,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,10 +116,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -291,7 +170,7 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -299,12 +178,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -326,7 +199,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -340,83 +213,40 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7c28dcc3-192c-4d57-93c9-f8ac3a53aa58" name="Default" comment="" />
-      <created>1521524406788</created>
+      <changelist id="fc1d3f8f-98fd-4d67-83e4-b77ac137dfc3" name="Default" comment="" />
+      <created>1521652967938</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1521524406788</updated>
-      <workItem from="1521524409951" duration="15677000" />
+      <updated>1521652967938</updated>
+      <workItem from="1521652971639" duration="5716000" />
     </task>
-    <task id="LOCAL-00001" summary="Added Map functionality">
-      <created>1521570224580</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1521570224580</updated>
-    </task>
-    <task id="LOCAL-00002" summary="WorldTimeStep 1/2 way done">
-      <created>1521584424754</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1521584424754</updated>
-    </task>
-    <task id="LOCAL-00003" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521586143950</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1521586143950</updated>
-    </task>
-    <task id="LOCAL-00004" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521586196230</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1521586196230</updated>
-    </task>
-    <task id="LOCAL-00005" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521596740775</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1521596740775</updated>
-    </task>
-    <task id="LOCAL-00006" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521596784961</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1521596784961</updated>
-    </task>
-    <task id="LOCAL-00007" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521596791874</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1521596791874</updated>
-    </task>
-    <task id="LOCAL-00008" summary="WorldTimeStep fighting done, before critters reproduce">
-      <created>1521645951071</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1521645951071</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15677000" />
+    <option name="totallyTimeSpent" value="5716000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="633" y="0" width="654" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -424,16 +254,16 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16416308" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3131313" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43939394" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -453,78 +283,20 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Map functionality" />
-    <MESSAGE value="WorldTimeStep 1/2 way done" />
-    <MESSAGE value="WorldTimeStep fighting done, before critters reproduce" />
-    <option name="LAST_COMMIT_MESSAGE" value="WorldTimeStep fighting done, before critters reproduce" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/InvalidCritterException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#166#167#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="598" column="47" lean-forward="true" selection-start-line="598" selection-start-column="47" selection-end-line="598" selection-end-column="47" />
+        <state relative-caret-position="-3603">
+          <caret line="119" column="30" lean-forward="false" selection-start-line="119" selection-start-column="25" selection-end-line="119" selection-end-column="30" />
           <folding>
-            <element signature="method#walk#0;class#Critter#0" expanded="false" />
-            <element signature="method#run#0;class#Critter#0" expanded="false" />
             <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
-            <element signature="method#torusx#0;class#Critter#0" expanded="false" />
-            <element signature="method#torusy#0;class#Critter#0" expanded="false" />
-            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
-            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
-            <element signature="method#runStats#0;class#Critter#0" expanded="false" />
-            <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
+            <element signature="method#rollDice#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
             <element signature="method#canMove#0;class#Critter#0" expanded="false" />
             <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
@@ -533,6 +305,7 @@
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#mapCheck#0;class#Critter#0" expanded="false" />
+            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
           </folding>
         </state>
       </provider>
