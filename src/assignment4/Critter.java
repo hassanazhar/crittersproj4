@@ -591,11 +591,12 @@ public abstract class Critter {
 		}
 	}
 
-	private static boolean checkAlgae(Critter foo){
+	private static boolean checkAlgae(Critter foo) throws InvalidCritterException {
 		try {
 			List<Critter> tmp = getInstances("assignment4.Algae");
 		}
 		catch(assignment4.InvalidCritterException e){
+			throw new InvalidCritterException("");
 		}
 	}
 	public static void displayWorld() {
