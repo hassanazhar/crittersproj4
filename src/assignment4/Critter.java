@@ -611,7 +611,45 @@ public abstract class Critter {
 		}
 		return x;
 	}
+	//DONE
 	public static void displayWorld() {
 		// Complete this method.
+		//Makes static world grid, doesn't interface with map
+		int width = Params.world_width+2;
+		int height = Params.world_height+2;
+		char[][]worldmap=new char[width][height];
+		for(int i=0;i<width;i++){
+			for(int j=0;j<height;j++){
+				if((i==0&&j==0)||(i==width-1&&j==height-1)||(i==0&&j==height-1)||(i==width-1)&&(j==0)){
+					worldmap[i][j]='+';
+				}
+				else if (i==0&&j!=0){
+					worldmap[i][j]='-';
+				}
+				else if(j==0&&i!=0){
+					worldmap[i][j]='|';
+				}
+				else if(i==width-1){
+					worldmap[i][j]='-';
+				}
+				else if(j==height-1){
+					worldmap[i][j]='|';
+				}
+				else{
+					worldmap[i][j]=' ';
+				}
+			}
+		}
+		//Add critters to display
+		for(Critter a : population){
+			worldmap[a.y_coord+1][a.x_coord+1]=a.toString().charAt(0);
+		}
+		for(int i=0;i<width;i++){
+			for(int j=0;j<height;j++){
+				System.out.print(worldmap[i][j]);
+			}
+			System.out.println();
+		}
+
 	}
 }
