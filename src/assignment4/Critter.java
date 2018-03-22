@@ -59,24 +59,33 @@ public abstract class Critter {
 		switch(direction){
 			case (0)://E
 				x_coord=torusx(1,x);
+				break;
+
 			case(1)://NE
 				x_coord=torusx(1,x);
 				y_coord=torusy(-1,y);
+				break;
 			case(2)://N
 				y_coord=torusy(-1,y);
+				break;
 			case(3)://NW
 				x_coord=torusx(-1,x);
 				y_coord=torusy(-1,y);
+				break;
 			case(4)://W
 				x_coord=torusx(-1,x);
+				break;
 			case(5)://SW
 				x_coord=torusx(-1,x);
 				y_coord=torusy(1,y);
+				break;
 			case(6)://S
 				y_coord=torusy(1,y);
+				break;
 			case(7)://SE
 				x_coord=torusx(1,x);
 				y_coord=torusy(1,y);
+				break;
 		}
 		map[x_coord][y_coord] += 1; // adding critter to new spot in map
 		this.moved=true;
@@ -91,26 +100,31 @@ public abstract class Critter {
 		switch(direction){
 			case(0):
 				x_coord=torusx(2,x);
-
+				break;
 			case(1):
 				x_coord=torusx(2,x);
 				y_coord=torusy(-2,y);
+				break;
 			case(2):
 				y_coord=torusy(-2,y);
+				break;
 			case(3):
 				x_coord=torusx(-2,x);
 				y_coord=torusy(-2,y);
+				break;
 			case(4):
 				x_coord=torusx(-2,x);
+				break;
 			case(5):
 				x_coord=torusx(-2,x);
 				y_coord=torusy(2,y);
 			case(6):
 				y_coord=torusy(2,y);
+				break;
 			case(7):
 				x_coord=torusx(2,x);
 				y_coord=torusy(2,y);
-
+				break;
 
 		}
 		map[x_coord][y_coord] += 1;		// adding critter to new spot in map
@@ -131,27 +145,35 @@ public abstract class Critter {
 				case(0):
 					offspring.x_coord=torusx(1, x);
 					offspring.y_coord=y;
+					break;
 				case(1)://NE
 					offspring.x_coord=torusx(1,x);
 					offspring.y_coord=torusy(-1,y);
+					break;
 				case(2)://N
 					offspring.x_coord=x;
 					offspring.y_coord=torusy(-1,y);
+					break;
 				case(3)://NW
 					offspring.x_coord=torusx(-1,x);
 					offspring.y_coord=torusy(-1,y);
+					break;
 				case(4)://W
 					offspring.x_coord=torusx(-1,x);
 					offspring.y_coord=y;
+					break;
 				case(5)://SW
 					offspring.x_coord=torusx(-1,x);
 					offspring.y_coord=torusy(1,y);
+					break;
 				case(6)://S
 					offspring.x_coord=x;
 					offspring.y_coord=torusy(1,y);
+					break;
 				case(7)://SE
 					offspring.x_coord=torusx(1,x);
 					offspring.y_coord=torusy(1,y);
+					break;
 
 			}
 			babies.add(offspring);
@@ -163,8 +185,8 @@ public abstract class Critter {
 	//MY NEW PRIVATE METHODS/ CONSTANTS
 	//TORUS WORLD
 	//H STAGE 1
-	private static String [] realCritters = {"assignment4.Algae","craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
-	private final int torusx(int moves, int xcoord){
+	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
+	private int torusx(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
@@ -178,7 +200,7 @@ public abstract class Critter {
 			return(xcoord);
 		}
 	}
-	private final int torusy(int moves, int ycoord){
+	private int torusy(int moves, int ycoord){
 		if((ycoord+moves)<0){
 			return(Params.world_height-moves);
 		}
@@ -188,16 +210,16 @@ public abstract class Critter {
 		}
 		else{
 			ycoord+=moves;
-			y_coord=y_coord+moves; //need to update y_coord as well
+			y_coord+=moves; //need to update y_coord as well
 			return(ycoord);
 		}
 	}
 	private boolean isAlive;
 	private boolean moved;//flag
-	private final int getx_coord(Critter i){
+	private static int getx_coord(Critter i){
 		return i.x_coord;
 	}
-	private final int gety_coord(Critter i){
+	private static int gety_coord(Critter i){
 		return i.y_coord;
 	}
 
@@ -217,6 +239,18 @@ public abstract class Critter {
 		Class<?> myCritClass = null;
 		Object obj;
 		Constructor<?> consttr;
+		boolean real = false;
+		//critter_class_name = critter_class_name.substring(0,1).toUpperCase()+critter_class_name.substring(1);
+		critter_class_name="assignment4."+critter_class_name;
+		for(String A: realCritters){
+			//String blah = "assignment4."+critter_class_name;
+			if (A.equals(critter_class_name)){
+				real = true;
+			}
+		}
+		if(!real){
+			throw new InvalidCritterException(critter_class_name);
+		}
 		try{
             myCritClass =Class.forName(critter_class_name);
             consttr=myCritClass.getConstructor();
@@ -426,7 +460,7 @@ public abstract class Critter {
 		babies.clear();
 	}
 
-	private static void rollDice(Critter A, Critter B){
+	private void rollDice(Critter A, Critter B){
 		int rollA = getRandomInt(A.getEnergy());
 		int rollB = getRandomInt(B.getEnergy());
 
@@ -447,32 +481,40 @@ public abstract class Critter {
 		Critter.population.remove(foo);
 	}
 
-	private static boolean canMove(Critter foo, int direction) {
+	private boolean canMove(Critter foo, int direction) {
 		int x = foo.x_coord;
 		int y = foo.y_coord;
 		int xCheck = 0;
 		int yCheck = 0;
 		switch (direction) {
 			case (0)://E
-				xCheck = torus2x(1, x);
+				xCheck = torusx(1, x);
+				break;
 			case (1)://NE
-				xCheck = torus2x(1, x);
-				yCheck = torus2y(-1, y);
+				xCheck = torusx(1, x);
+				yCheck = torusy(-1, y);
+				break;
 			case (2)://N
-				yCheck = torus2y(-1, y);
+				yCheck = torusy(-1, y);
+				break;
 			case (3)://NW
-				xCheck = torus2x(-1, x);
-				yCheck = torus2y(-1, y);
+				xCheck = torusx(-1, x);
+				yCheck = torusy(-1, y);
+				break;
 			case (4)://W
-				xCheck = torus2x(-1, x);
+				xCheck = torusx(-1, x);
+				break;
 			case (5)://SW
-				xCheck = torus2x(-1, x);
-				yCheck = torus2y(1, y);
+				xCheck = torusx(-1, x);
+				yCheck = torusy(1, y);
+				break;
 			case (6)://S
-				yCheck = torus2y(1, y);
+				yCheck = torusy(1, y);
+				break;
 			case (7)://SE
-				xCheck = torus2x(1, x);
-				yCheck = torus2y(1, y);
+				xCheck = torusx(1, x);
+				yCheck = torusy(1, y);
+				break;
 		}
 		if(map[xCheck][yCheck]>0){
 			return false;
@@ -481,7 +523,7 @@ public abstract class Critter {
 		}
 	}
 
-	private static int torus2x(int moves, int xcoord){
+	/*private final int torus2x(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
@@ -491,11 +533,12 @@ public abstract class Critter {
 		}
 		else{
 			xcoord+=moves;
+			x_coord+=moves;
 			return(xcoord);
 		}
-	}
+	}*/
 
-	private static int torus2y(int moves, int ycoord){
+	/*private final int torus2y(int moves, int ycoord){
 		if((ycoord+moves)<0){
 			return(Params.world_height-moves);
 		}
@@ -507,9 +550,9 @@ public abstract class Critter {
 			ycoord+=moves;
 			return(ycoord);
 		}
-	}
+	}*/
 
-	private static boolean runAway(Critter foo){
+	private boolean runAway(Critter foo){
 		//if A has moved
 		if(foo.moved) {
 			foo.energy = foo.getEnergy() - Params.walk_energy_cost;
@@ -536,7 +579,7 @@ public abstract class Critter {
 		return false;
 	}
 
-	private static void encounters(){
+	private static  void encounters(){
 		for(Critter bCrit: Critter.population){
 	    	for(Critter aCrit: Critter.population){
 	    		if(aCrit==bCrit){
@@ -645,7 +688,7 @@ public abstract class Critter {
 		}
 		//Add critters to display
 		for(Critter a : population){
-			worldmap[a.y_coord+1][a.x_coord+1]=a.toString().charAt(0);
+			worldmap[a.x_coord+1][a.y_coord+1]=a.toString().charAt(0);
 		}
 		for(int i=0;i<width;i++){
 			for(int j=0;j<height;j++){

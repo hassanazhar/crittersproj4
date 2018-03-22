@@ -74,7 +74,7 @@ public class Main {
         System.out.println("CRITTER WORLD SIMULATOR");
         while(SIM){
             String instruction = kb.nextLine();
-            instruction=instruction.toLowerCase();
+            //instruction=instruction.toLowerCase();
             String[] split= instruction.split(" ");
 
             if(split[0].equals("quit")){
