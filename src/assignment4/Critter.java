@@ -49,6 +49,7 @@ public abstract class Critter {
 	private int x_coord;
 	private int y_coord;
 
+
 	//DONE UPDATED
 	protected final void walk(int direction) {
 		//Remember: world starts at 0,0, which is top left
@@ -186,7 +187,7 @@ public abstract class Critter {
 	//TORUS WORLD
 	//H STAGE 1
 	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
-	private int torusx(int moves, int xcoord){
+	private final int torusx(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
@@ -200,7 +201,7 @@ public abstract class Critter {
 			return(xcoord);
 		}
 	}
-	private int torusy(int moves, int ycoord){
+	private final int torusy(int moves, int ycoord){
 		if((ycoord+moves)<0){
 			return(Params.world_height-moves);
 		}
@@ -460,7 +461,7 @@ public abstract class Critter {
 		babies.clear();
 	}
 
-	private void rollDice(Critter A, Critter B){
+	private static void rollDice(Critter A, Critter B){
 		int rollA = getRandomInt(A.getEnergy());
 		int rollB = getRandomInt(B.getEnergy());
 
@@ -481,39 +482,39 @@ public abstract class Critter {
 		Critter.population.remove(foo);
 	}
 
-	private boolean canMove(Critter foo, int direction) {
+	private static boolean canMove(Critter foo, int direction) {
 		int x = foo.x_coord;
 		int y = foo.y_coord;
 		int xCheck = 0;
 		int yCheck = 0;
 		switch (direction) {
 			case (0)://E
-				xCheck = torusx(1, x);
+				xCheck = torus2x(1, x);
 				break;
 			case (1)://NE
-				xCheck = torusx(1, x);
-				yCheck = torusy(-1, y);
+				xCheck = torus2x(1, x);
+				yCheck = torus2y(-1, y);
 				break;
 			case (2)://N
-				yCheck = torusy(-1, y);
+				yCheck = torus2y(-1, y);
 				break;
 			case (3)://NW
-				xCheck = torusx(-1, x);
-				yCheck = torusy(-1, y);
+				xCheck = torus2x(-1, x);
+				yCheck = torus2y(-1, y);
 				break;
 			case (4)://W
-				xCheck = torusx(-1, x);
+				xCheck = torus2x(-1, x);
 				break;
 			case (5)://SW
-				xCheck = torusx(-1, x);
-				yCheck = torusy(1, y);
+				xCheck = torus2x(-1, x);
+				yCheck = torus2y(1, y);
 				break;
 			case (6)://S
-				yCheck = torusy(1, y);
+				yCheck = torus2y(1, y);
 				break;
 			case (7)://SE
-				xCheck = torusx(1, x);
-				yCheck = torusy(1, y);
+				xCheck = torus2x(1, x);
+				yCheck = torus2y(1, y);
 				break;
 		}
 		if(map[xCheck][yCheck]>0){
@@ -523,7 +524,7 @@ public abstract class Critter {
 		}
 	}
 
-	/*private final int torus2x(int moves, int xcoord){
+	private static int torus2x(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
@@ -533,12 +534,11 @@ public abstract class Critter {
 		}
 		else{
 			xcoord+=moves;
-			x_coord+=moves;
 			return(xcoord);
 		}
-	}*/
+	}
 
-	/*private final int torus2y(int moves, int ycoord){
+	private static int torus2y(int moves, int ycoord){
 		if((ycoord+moves)<0){
 			return(Params.world_height-moves);
 		}
@@ -550,9 +550,9 @@ public abstract class Critter {
 			ycoord+=moves;
 			return(ycoord);
 		}
-	}*/
+	}
 
-	private boolean runAway(Critter foo){
+	private static boolean runAway(Critter foo){
 		//if A has moved
 		if(foo.moved) {
 			foo.energy = foo.getEnergy() - Params.walk_energy_cost;
