@@ -56,8 +56,12 @@ public abstract class Critter {
 		energy=energy-Params.walk_energy_cost;
 		int x = x_coord;
 		int y = y_coord;
-		map[x][y] += -1;		// removing critter from previous spot in map
+		map[x][y] = map[x][y] -1;		// removing critter from previous spot in map
+		if(x_coord >= 160 || y_coord >= 80 || x_coord < 0 || y_coord < 0)
+			return;
 		switch(direction){
+
+
 			case (0)://E
 				x_coord=torusx(1,x);
 				break;
@@ -88,7 +92,11 @@ public abstract class Critter {
 				y_coord=torusy(1,y);
 				break;
 		}
-		map[x_coord][y_coord] += 1; // adding critter to new spot in map
+
+		if(x_coord >= 160 || y_coord >= 80 || x_coord < 0 || y_coord < 0)
+			return;
+		map[x_coord][y_coord] = map[x_coord][y_coord] + 1; // adding critter to new spot in map
+
 		this.moved=true;
 
 	}
@@ -188,7 +196,7 @@ public abstract class Critter {
 	//H STAGE 1
 	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
 	private final int torusx(int moves, int xcoord){
-		if ((xcoord+moves)>(Params.world_width-1)){
+		if ((xcoord+moves)>(Params.world_width)){
 			return(moves-1);
 
 		}
@@ -405,6 +413,8 @@ public abstract class Critter {
 		for(Critter j: babies){
 			babies.remove(j);
 		}
+		population.clear();
+		babies.clear();
 
 
 	}
@@ -438,7 +448,7 @@ public abstract class Critter {
 			//child.setEnergy(Params.start_energy);
 			//makecritter takes care of anything
 			try{
-				makeCritter("assignment4.algae");
+				makeCritter("Algae");
 			}
 			catch(InvalidCritterException e){
 				e.printStackTrace();
@@ -517,6 +527,13 @@ public abstract class Critter {
 				yCheck = torus2y(1, y);
 				break;
 		}
+		if(xCheck > Params.world_width-1){
+			System.out.println("we messed up");
+		}
+		if(yCheck > Params.world_height-1){
+			System.out.print("we messed up y");
+		}
+
 		if(map[xCheck][yCheck]>0){
 			return false;
 		} else {
