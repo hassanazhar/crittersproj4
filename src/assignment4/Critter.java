@@ -18,6 +18,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Iterator;
 import java.util.Random;
 
 /* see the PDF for descriptions of the methods and fields in this class
@@ -27,6 +28,7 @@ import java.util.Random;
 
 
 public abstract class Critter {
+	public static int count = 0;
 	private static String myPackage;
 	private	static List<Critter> population = new java.util.ArrayList<Critter>();
 	private static List<Critter> babies = new java.util.ArrayList<Critter>();
@@ -37,6 +39,7 @@ public abstract class Critter {
 	}
 	private static java.util.Random rand = new java.util.Random();
 	public static int getRandomInt(int max) {
+		setSeed(10);
 		return rand.nextInt(max);
 	}
 	public static void setSeed(long new_seed) {
@@ -424,21 +427,37 @@ public abstract class Critter {
 	//Add code to remove dead critters
 	// Complete this method.
 	public static void worldTimeStep() {
+		System.out.println("Time Step: " + count);
+		count = count + 1;
 	    for (Critter A : Critter.population){
 	        if(A.energy<=0){
-				removeCritter(A);
+				A.isAlive = false;
             }
             else if(A.energy>0){
 	            A.isAlive=true;
                 A.doTimeStep();
                 if(A.energy<0){
-					removeCritter(A);
+					A.isAlive = false;
 				}
             }
 
         }
+		for (Iterator<Critter> iterator = Critter.population.iterator(); iterator.hasNext();){
+			Critter tmp = iterator.next();
+			if (tmp.isAlive == false){
+				iterator.remove();
+			}
+		}
 
-        encounters();
+        encounters2();
+
+		for (Iterator<Critter> iterator = Critter.population.iterator(); iterator.hasNext();){
+			Critter tmp = iterator.next();
+			if (tmp.isAlive == false){
+				iterator.remove();
+			}
+		}
+
 		mapCheck();
 		// we have add reproduction
 
@@ -459,7 +478,13 @@ public abstract class Critter {
 		for (Critter A : Critter.population){
 			A.energy = A.getEnergy() - Params.rest_energy_cost;
 			if(A.getEnergy()<=0){
-				removeCritter(A);
+				A.isAlive=false;
+			}
+		}
+		for (Iterator<Critter> iterator = Critter.population.iterator(); iterator.hasNext();){
+			Critter tmp = iterator.next();
+			if (tmp.isAlive == false){
+				iterator.remove();
 			}
 		}
 		//babies add
@@ -478,12 +503,12 @@ public abstract class Critter {
 		if(rollA>=rollB){
 			A.isAlive=true;
 			A.energy+= B.getEnergy()/2;
-			removeCritter(B);
+			B.isAlive=false;
 		}
 		else{
 			B.isAlive=true;
 			B.energy+= A.getEnergy()/2;
-			removeCritter(A);
+			A.isAlive=false;
 		}
 	}
 
@@ -592,17 +617,20 @@ public abstract class Critter {
 	private static boolean sameLocation(Critter A, Critter B){
 		if((A.x_coord==B.x_coord) && (A.y_coord == B.y_coord)){
 			return true;
+		}else {
+			return false;
 		}
-		return false;
 	}
 
 	private static  void encounters(){
 		for(Critter bCrit: Critter.population){
 	    	for(Critter aCrit: Critter.population){
-	    		if(aCrit==bCrit){
+				if(bCrit.isAlive = false) {
+					System.out.println("bCrit is dead. Outer loop char is dead.");
+					continue;
+				}else if(aCrit==bCrit){
 	    			continue;
-				}
-	    		else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
+				}else if(aCrit.x_coord==bCrit.x_coord&& aCrit.y_coord==bCrit.y_coord){
 	    			if(aCrit.isAlive&&bCrit.isAlive) {
 						boolean aFight = aCrit.fight(bCrit.toString());
 						boolean bFight = bCrit.fight(aCrit.toString());
@@ -615,7 +643,7 @@ public abstract class Critter {
 							if(!runAway(bCrit)){
 								aCrit.isAlive=true;
 								aCrit.energy += bCrit.getEnergy()/2;
-								removeCritter(bCrit);
+								bCrit.isAlive=false;
 							}
 
 						}
@@ -623,29 +651,85 @@ public abstract class Critter {
 							if(!runAway(aCrit)) {
 								bCrit.isAlive = true;
 								bCrit.energy += aCrit.getEnergy() / 2;
-								removeCritter(aCrit);
+								aCrit.isAlive = false;
 							}
 						}
 						else if(!aFight && !bFight){
 							runAway(aCrit);
 							if(aCrit.getEnergy()<=0){
-								removeCritter(aCrit);
+								aCrit.isAlive = false;
 							}
 							runAway(bCrit);
 							if(bCrit.getEnergy()<=0){
-								removeCritter(bCrit);
+								bCrit.isAlive=false;
 							}
 							if(sameLocation(aCrit,bCrit)){
 								rollDice(aCrit, bCrit);
 							}
 						}
 
+					}else if(aCrit.isAlive==false){
+	    				System.out.println("One of them is dead");
 					}
 				}
-			//reduce rest energy cost for all critters.
-				//generate algae// remove dead shit from population//add babies to population
+				if(aCrit.isAlive==false){
+	    			removeCritter(aCrit);
+				}
 			}
+			if(bCrit.isAlive==false){
+	    		removeCritter(bCrit);
+			}
+		}
+	}
 
+	private static void encounters2(){
+		for(Critter aCrit : Critter.population){
+			if(aCrit.isAlive == false){
+				continue;
+			}
+			for(Critter bCrit : Critter.population){
+				if(aCrit.isAlive == false){
+					break;
+				} else if(bCrit.isAlive == false){
+					continue;
+				}else if(aCrit == bCrit){
+					continue;
+				} else if(aCrit.isAlive && bCrit.isAlive){
+					if(sameLocation(aCrit, bCrit)){
+						boolean aFight = aCrit.fight(bCrit.toString());
+						boolean bFight = bCrit.fight(aCrit.toString());
+
+						if(aFight && bFight){
+							rollDice(aCrit,bCrit);
+						} else if(aFight && !bFight){
+							//we want B to try and walk
+							if(!runAway(bCrit)){
+								aCrit.isAlive=true;
+								aCrit.energy += bCrit.getEnergy()/2;
+								bCrit.isAlive=false;
+							}
+						} else if(!aFight && bFight){
+							if(!runAway(aCrit)) {
+								bCrit.isAlive = true;
+								bCrit.energy += aCrit.getEnergy()/2;
+								aCrit.isAlive = false;
+							}
+						} else if(!aFight && !bFight){
+							runAway(aCrit);
+							if(aCrit.getEnergy()<=0){
+								aCrit.isAlive = false;
+							}
+							runAway(bCrit);
+							if(bCrit.getEnergy()<=0){
+								bCrit.isAlive=false;
+							}
+							if(sameLocation(aCrit,bCrit)){
+								rollDice(aCrit, bCrit);
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	//whats purpose of mapcheck
@@ -653,7 +737,7 @@ public abstract class Critter {
 		for(int x = 0; x < Params.world_width; x = x + 1){
 			for(int y = 0; y < Params.world_height; y = y + 1){
 				if(map[x][y] > 1){
-					System.out.println("Encounter Missing. Position: (" + x + "," + y + ").");
+					//System.out.println("Encounter Missing. Position: (" + x + "," + y + ").");
 				}
 			}
 		}
