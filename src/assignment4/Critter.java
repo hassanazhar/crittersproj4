@@ -163,7 +163,7 @@ public abstract class Critter {
 	//MY NEW PRIVATE METHODS/ CONSTANTS
 	//TORUS WORLD
 	//H STAGE 1
-	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","Assignment4.MyCritter1","Assignment4.MyCritter6","Assignment4.MyCritter7"};
+	private static String [] realCritters = {"assignment4.Algae","craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
 	private final int torusx(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
@@ -231,7 +231,10 @@ public abstract class Critter {
 			population.add(c);
 
 		}catch(ClassNotFoundException e) {
+			System.out.println(critter_class_name);//
+			System.out.println(myCritClass);//
 			System.out.println("ERROR 1");
+
 			throw new InvalidCritterException(critter_class_name);
 		}
 		catch(NoSuchMethodException e){
