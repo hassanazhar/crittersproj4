@@ -71,7 +71,7 @@ public class Main {
         /* Do not alter the code above for your submission. */
         /* Write your code below. */
         
-        System.out.println("CRITTER WORLD SIMULATOR");
+        //System.out.println("CRITTER WORLD SIMULATOR");
         while(SIM){
             String instruction = kb.nextLine();
             //instruction=instruction.toLowerCase();
@@ -173,7 +173,7 @@ public class Main {
                     System.out.println("error processing:" + instruction);
                     continue;
                 }
-                String name = split[1];
+                String name = "assignment4."+split[1];
                 try{
                     List<Critter> crits=Critter.getInstances(name);
                     Class<?>critclass = null;
@@ -189,7 +189,7 @@ public class Main {
                 }
             }
             else{
-                System.out.println("error processing "+instruction);
+                System.out.println("error processing:"+instruction);
             }
 
         }

@@ -44,8 +44,8 @@ public abstract class Critter {
 		System.out.println(seed);
 		setSeed(seed);
 		*/
-		if (max<0){
-			max = 0;
+		if (max<1){
+			max = 1;
 		}
 		return rand.nextInt(max);
 	}
@@ -506,6 +506,10 @@ public abstract class Critter {
 	}
 
 	private static void rollDice(Critter A, Critter B){
+		if (A.getEnergy()<=0 || B.getEnergy()<=0){
+			//System.out.print("ERORROORORR");
+
+		}
 		int rollA = getRandomInt(A.getEnergy());
 		int rollB = getRandomInt(B.getEnergy());
 
