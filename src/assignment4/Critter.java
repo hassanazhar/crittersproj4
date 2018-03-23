@@ -56,7 +56,7 @@ public abstract class Critter {
 	public String toString() { return ""; }
 	private int energy = 0;
 	protected int getEnergy() { return energy; }
-	private void setEnergy(int money){ this.energy = money;}
+	public void setEnergyCritPowerUp(int money){ this.energy = money;}
 	private int x_coord;
 	private int y_coord;
 
