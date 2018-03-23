@@ -205,8 +205,8 @@ public abstract class Critter {
 	//MY NEW PRIVATE METHODS/ CONSTANTS
 	//TORUS WORLD
 	//H STAGE 1
-	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7",
-	"assignment4.Ali", "assignment4.Tank"};
+	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.Boss",
+	"assignment4.Ali", "assignment4.Tank","assignment4.BigBoss"};
 	private final int torusx(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
@@ -243,6 +243,8 @@ public abstract class Critter {
 	private static int gety_coord(Critter i){
 		return i.y_coord;
 	}
+	//ALI PUBLIC
+	//private void setEnergyCritPowerUp(int money){ this.energy = money;}
 
 	/**
 	 * create and initialize a Critter subclass.
@@ -565,12 +567,12 @@ public abstract class Critter {
 				yCheck = torus2y(1, y);
 				break;
 		}
-		if(xCheck > Params.world_width-1){
+		/*if(xCheck > Params.world_width-1){
 			System.out.println("we messed up");
 		}
 		if(yCheck > Params.world_height-1){
 			System.out.print("we messed up y");
-		}
+		}*/
 
 		if(map[xCheck][yCheck]>0){
 			return false;
@@ -639,7 +641,7 @@ public abstract class Critter {
 		for(Critter bCrit: Critter.population){
 	    	for(Critter aCrit: Critter.population){
 				if(bCrit.isAlive = false) {
-					System.out.println("bCrit is dead. Outer loop char is dead.");
+					//System.out.println("bCrit is dead. Outer loop char is dead.");
 					continue;
 				}else if(aCrit==bCrit){
 	    			continue;
@@ -681,8 +683,6 @@ public abstract class Critter {
 							}
 						}
 
-					}else if(aCrit.isAlive==false){
-	    				System.out.println("One of them is dead");
 					}
 				}
 				if(aCrit.isAlive==false){
