@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="02a5b4d9-11bf-43c6-b076-bc01b424c97f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Tank.class" afterPath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Tank.class" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Algae.java" afterPath="$PROJECT_DIR$/src/assignment4/Algae.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Ali.java" afterPath="$PROJECT_DIR$/src/assignment4/Ali.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/BigBoss.java" afterPath="$PROJECT_DIR$/src/assignment4/BigBoss.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Boss.java" afterPath="$PROJECT_DIR$/src/assignment4/Boss.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Craig.java" afterPath="$PROJECT_DIR$/src/assignment4/Craig.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Header.java" afterPath="$PROJECT_DIR$/src/assignment4/Header.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/InvalidCritterException.java" afterPath="$PROJECT_DIR$/src/assignment4/InvalidCritterException.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter1.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter1.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter6.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter6.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter7.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter7.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Params.java" afterPath="$PROJECT_DIR$/src/assignment4/Params.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Tank.java" afterPath="$PROJECT_DIR$/src/assignment4/Tank.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +101,8 @@
       <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="e#0#1012#0" expanded="true" />
                 <element signature="e#408#409#0" expanded="true" />
@@ -389,15 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1521776299737</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="final">
+      <created>1521777080455</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521777080455</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="960000" />
+    <option name="totallyTimeSpent" value="1006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -408,7 +398,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.50323623" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.49676377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -946,8 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="e#0#1012#0" expanded="true" />
             <element signature="e#408#409#0" expanded="true" />
