@@ -10,11 +10,16 @@ public class Tank extends Critter {
         public Tank(){
             dir = 1;
         }
+<<<<<<< HEAD
         @Override
+=======
+
+>>>>>>> 8d898fa9261881329b370ca3a04d8199be9874f6
         public boolean fight(String not_used){
 
             return true;
         }
+<<<<<<< HEAD
         @Override
         public void doTimeStep(){
             run(dir);
@@ -24,6 +29,17 @@ public class Tank extends Critter {
         /*private void powerUp(){
             setEnergyCritPowerUp(getEnergy());
         }*/
+=======
+
+        public void doTimeStep(){
+            run(dir);
+            powerUp();
+        }
+
+        public void powerUp(){
+            setEnergyCritPowerUp(getEnergy());
+        }
+>>>>>>> 8d898fa9261881329b370ca3a04d8199be9874f6
 
         public static void runStats(java.util.List<Critter> tanks){
             int max = 0;
