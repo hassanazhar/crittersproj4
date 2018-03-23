@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc1d3f8f-98fd-4d67-83e4-b77ac137dfc3" name="Default" comment="Can't remove while iteratoring">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter$TestCritter.class" />
+    <list default="true" id="fc1d3f8f-98fd-4d67-83e4-b77ac137dfc3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/crittersproj4/assignment4/Critter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
@@ -16,34 +15,140 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="761" column="38" lean-forward="true" selection-start-line="761" selection-start-column="38" selection-end-line="761" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="initializer##0;class#Critter#0" expanded="false" />
-                <element signature="e#8753#8762#0" expanded="true" />
-                <element signature="e#9363#9380#0" expanded="true" />
-                <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
-                <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-                <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-                <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-                <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-                <element signature="method#runAway#0;class#Critter#0" expanded="false" />
-                <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
-                <element signature="method#encounters#0;class#Critter#0" expanded="false" />
-                <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-                <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
-                <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="InvalidCritterException.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/InvalidCritterException.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+                  <folding>
+                    <element signature="e#166#167#0" expanded="true" />
+                    <element signature="e#209#210#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="757" column="53" lean-forward="false" selection-start-line="757" selection-start-column="53" selection-end-line="757" selection-end-column="53" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="initializer##0;class#Critter#0" expanded="false" />
+                    <element signature="method#run#0;class#Critter#0" expanded="false" />
+                    <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+                    <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+                    <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+                    <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+                    <element signature="e#8940#8949#0" expanded="true" />
+                    <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+                    <element signature="e#9550#9567#0" expanded="true" />
+                    <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+                    <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
+                    <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
+                    <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
+                    <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
+                    <element signature="method#encounters#0;class#Critter#0" expanded="false" />
+                    <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
+                    <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="133">
+                  <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Ali.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Ali.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="570">
+                  <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#180#181#0" expanded="true" />
+                    <element signature="e#225#226#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FileInputStream.java" pinned="false" current-in-tab="false">
+            <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="149">
+                  <caret line="218" column="23" lean-forward="false" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Params.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="208" column="40" lean-forward="false" selection-start-line="208" selection-start-column="40" selection-end-line="208" selection-end-column="40" />
+                  <folding>
+                    <element signature="initializer##0;class#Critter#0" expanded="false" />
+                    <element signature="e#8940#8949#0" expanded="true" />
+                    <element signature="e#9550#9567#0" expanded="true" />
+                    <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
+                    <element signature="method#worldTimeStep#0;class#Critter#0" expanded="false" />
+                    <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
+                    <element signature="method#canMove#0;class#Critter#0" expanded="false" />
+                    <element signature="method#runAway#0;class#Critter#0" expanded="false" />
+                    <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
+                    <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
+                    <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Craig.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="212">
+                  <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -63,6 +168,15 @@
       <find>x_coord</find>
       <find>encounter</find>
       <find>removeCri</find>
+      <find>removeCr</find>
+      <find>random</find>
+      <find>runst</find>
+      <find>torus</find>
+      <find>torus2x</find>
+      <find>assignm</find>
+      <find>getIns</find>
+      <find>stats</find>
+      <find>energy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,6 +198,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Ali.java" />
       </list>
     </option>
   </component>
@@ -447,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521750200701</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Can't remove while iteratoring">
+      <created>1521759915700</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1521759915703</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -480,11 +602,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37295000" />
+    <option name="totallyTimeSpent" value="44294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -494,12 +615,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.517094" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34978542" sideWeight="0.48290598" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34978542" sideWeight="0.48290598" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.497558" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24297924" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24297924" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -591,18 +712,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
-          <line>555</line>
+          <line>564</line>
           <properties />
-          <option name="timeStamp" value="23" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
-          <line>558</line>
+          <line>567</line>
           <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assignment4/Main.java</url>
+          <line>183</line>
+          <properties />
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/assignment4/Main.java</url>
+          <line>175</line>
+          <properties />
+          <option name="timeStamp" value="70" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="59" />
+      <option name="time" value="71" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -611,16 +750,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/crittersproj4/kill_all_critter/expected_output.txt" />
-    <entry file="file://$PROJECT_DIR$/out/production/crittersproj4/kill_all_critter/input.txt" />
     <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -660,18 +789,21 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#Critter#0" expanded="false" />
-            <element signature="e#8753#8762#0" expanded="true" />
-            <element signature="e#9363#9380#0" expanded="true" />
+            <element signature="method#run#0;class#Critter#0" expanded="false" />
+            <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="e#8940#8949#0" expanded="true" />
+            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+            <element signature="e#9550#9567#0" expanded="true" />
+            <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-            <element signature="method#runAway#0;class#Critter#0" expanded="false" />
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
             <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
           </folding>
         </state>
@@ -684,18 +816,21 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#Critter#0" expanded="false" />
-            <element signature="e#8753#8762#0" expanded="true" />
-            <element signature="e#9363#9380#0" expanded="true" />
+            <element signature="method#run#0;class#Critter#0" expanded="false" />
+            <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="e#8940#8949#0" expanded="true" />
+            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+            <element signature="e#9550#9567#0" expanded="true" />
+            <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-            <element signature="method#runAway#0;class#Critter#0" expanded="false" />
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
             <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
           </folding>
         </state>
@@ -824,18 +959,21 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#Critter#0" expanded="false" />
-            <element signature="e#8753#8762#0" expanded="true" />
-            <element signature="e#9363#9380#0" expanded="true" />
+            <element signature="method#run#0;class#Critter#0" expanded="false" />
+            <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="e#8940#8949#0" expanded="true" />
+            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+            <element signature="e#9550#9567#0" expanded="true" />
+            <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-            <element signature="method#runAway#0;class#Critter#0" expanded="false" />
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
             <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
           </folding>
         </state>
@@ -848,18 +986,21 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#Critter#0" expanded="false" />
-            <element signature="e#8753#8762#0" expanded="true" />
-            <element signature="e#9363#9380#0" expanded="true" />
+            <element signature="method#run#0;class#Critter#0" expanded="false" />
+            <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="e#8940#8949#0" expanded="true" />
+            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+            <element signature="e#9550#9567#0" expanded="true" />
+            <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-            <element signature="method#runAway#0;class#Critter#0" expanded="false" />
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
             <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
           </folding>
         </state>
@@ -917,14 +1058,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/sun/misc/Launcher.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/ClassLoader.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/net/URLClassLoader.java" />
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1632">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/crittersproj4/kill_all_critter/expected_output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -947,38 +1080,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/InvalidCritterException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#166#167#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,26 +1106,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Params.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="218" column="23" lean-forward="false" selection-start-line="218" selection-start-column="23" selection-end-line="218" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/InvalidCritterException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="761" column="38" lean-forward="true" selection-start-line="761" selection-start-column="38" selection-end-line="761" selection-end-column="38" />
+        <state relative-caret-position="132">
+          <caret line="757" column="53" lean-forward="false" selection-start-line="757" selection-start-column="53" selection-end-line="757" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="initializer##0;class#Critter#0" expanded="false" />
-            <element signature="e#8753#8762#0" expanded="true" />
-            <element signature="e#9363#9380#0" expanded="true" />
+            <element signature="method#run#0;class#Critter#0" expanded="false" />
+            <element signature="method#reproduce#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="method#makeCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#getInstances#0;class#Critter#0" expanded="false" />
+            <element signature="e#8940#8949#0" expanded="true" />
+            <element signature="docComment;method#runStats#0;class#Critter#0" expanded="false" />
+            <element signature="e#9550#9567#0" expanded="true" />
+            <element signature="class#TestCritter#0;class#Critter#0" expanded="false" />
+            <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#removeCritter#0;class#Critter#0" expanded="false" />
-            <element signature="method#canMove#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2x#0;class#Critter#0" expanded="false" />
-            <element signature="method#torus2y#0;class#Critter#0" expanded="false" />
-            <element signature="method#runAway#0;class#Critter#0" expanded="false" />
             <element signature="method#sameLocation#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters#0;class#Critter#0" expanded="false" />
             <element signature="method#encounters2#0;class#Critter#0" expanded="false" />
-            <element signature="method#checkAlgae#0;class#Critter#0" expanded="false" />
             <element signature="method#displayWorld#0;class#Critter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Ali.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
           </folding>
         </state>
       </provider>

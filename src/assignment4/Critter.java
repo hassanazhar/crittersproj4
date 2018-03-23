@@ -39,7 +39,14 @@ public abstract class Critter {
 	}
 	private static java.util.Random rand = new java.util.Random();
 	public static int getRandomInt(int max) {
-		setSeed(10);
+		/*
+		int seed = 22;
+		System.out.println(seed);
+		setSeed(seed);
+		*/
+		if (max<0){
+			max = 0;
+		}
 		return rand.nextInt(max);
 	}
 	public static void setSeed(long new_seed) {
@@ -49,6 +56,7 @@ public abstract class Critter {
 	public String toString() { return ""; }
 	private int energy = 0;
 	protected int getEnergy() { return energy; }
+	private void setEnergy(int money){ this.energy = money;}
 	private int x_coord;
 	private int y_coord;
 
@@ -197,14 +205,15 @@ public abstract class Critter {
 	//MY NEW PRIVATE METHODS/ CONSTANTS
 	//TORUS WORLD
 	//H STAGE 1
-	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7"};
+	private static String [] realCritters = {"assignment4.Algae","assignment4.Craig","assignment4.MyCritter1","assignment4.MyCritter6","assignment4.MyCritter7",
+	"assignment4.Ali", "assignment4.Tank"};
 	private final int torusx(int moves, int xcoord){
-		if ((xcoord+moves)>(Params.world_width)){
+		if ((xcoord+moves)>(Params.world_width-1)){
 			return(moves-1);
 
 		}
 		else if((xcoord+moves)<0){
-			return(Params.world_width-moves);
+			return(Params.world_width+moves);
 		}
 		else{
 			xcoord+=moves;
@@ -214,7 +223,7 @@ public abstract class Critter {
 	}
 	private final int torusy(int moves, int ycoord){
 		if((ycoord+moves)<0){
-			return(Params.world_height-moves);
+			return(Params.world_height+moves);
 		}
 		else if((Params.world_height-1)<(ycoord+moves)){
 			return(moves-1);
@@ -427,7 +436,7 @@ public abstract class Critter {
 	//Add code to remove dead critters
 	// Complete this method.
 	public static void worldTimeStep() {
-		System.out.println("Time Step: " + count);
+		//System.out.println("Time Step: " + count);
 		count = count + 1;
 	    for (Critter A : Critter.population){
 	        if(A.energy<=0){
@@ -568,11 +577,11 @@ public abstract class Critter {
 
 	private static int torus2x(int moves, int xcoord){
 		if ((xcoord+moves)>(Params.world_width-1)){
-			return(moves-1);
+			return (moves-1);
 
 		}
 		else if((xcoord+moves)<0){
-			return(Params.world_width-moves);
+			return(Params.world_width+moves);
 		}
 		else{
 			xcoord+=moves;
@@ -582,10 +591,10 @@ public abstract class Critter {
 
 	private static int torus2y(int moves, int ycoord){
 		if((ycoord+moves)<0){
-			return(Params.world_height-moves);
+			return(Params.world_height+moves);
 		}
 		else if((Params.world_height-1)<(ycoord+moves)){
-			return(moves-1);
+			return (moves-1);
 
 		}
 		else{
@@ -599,7 +608,7 @@ public abstract class Critter {
 		if(foo.moved) {
 			foo.energy = foo.getEnergy() - Params.walk_energy_cost;
 			if (foo.getEnergy() <= 0) {
-				removeCritter(foo);
+				foo.isAlive=false;
 			}
 			return false;
 		} else {
