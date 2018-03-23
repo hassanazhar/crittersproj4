@@ -637,7 +637,7 @@ public abstract class Critter {
 		}
 	}
 
-	private static  void encounters(){
+	/*private static  void encounters(){
 		for(Critter bCrit: Critter.population){
 	    	for(Critter aCrit: Critter.population){
 				if(bCrit.isAlive = false) {
@@ -694,7 +694,7 @@ public abstract class Critter {
 			}
 		}
 	}
-
+*/
 	private static void encounters2(){
 		for(Critter aCrit : Critter.population){
 			if(aCrit.isAlive == false){
